@@ -1,4 +1,4 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbz2kTUtq-256agppEnfqZb4g454kbOC_YGLne8s936jFo-oh6ch5EOyGYA7l6Ezt5YkSw/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbzbbxJiDL-9hYOI5UDjXOnT92yFEwJ1TPxDqfQDyIbJSW8op9wYS1qVJYrwkCH_aOEU/exec";
 
 async function registerUser(data) {
   const res = await fetch(API_URL, {
