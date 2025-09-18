@@ -1,37 +1,41 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbyhSWI5LLMLh7RSGtjh2OiI7YEPdHcEJWQa75-yW4Xm4SqnDL2U2vxeXUEt1y4BA59sFA/exec";
-async function registerUser(data) {
-  const res = await fetch(API_URL, {
+const API_URL = "https://script.google.com/macros/s/AKfycbzHb8bgrLxZS6VFiLZsIL996_MbaZNDafhQjSOXOBdJc7PWsjbYh1gag2j4-lTLqxgA/exec";
+
+// Example: Register
+function registerUser(formData) {
+  return fetch(API_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ action: "register", ...data })
-  });
-
-  const responseText = await res.text(); // Debug
-  console.log("Raw response:", responseText);
-
-  try {
-    return JSON.parse(responseText);
-  } catch (e) {
-    console.error("Failed to parse JSON:", e);
-    return { status: "error", message: "Invalid JSON from server" };
-  }
+    body: JSON.stringify({ action: "register", ...formData })
+  })
+    .then(res => res.json());
 }
 
-
-async function loginUser(data) {
-  const res = await fetch(API_URL, {
+// Example: Login
+function loginUser(email, password) {
+  return fetch(API_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ action: "login", ...data })
-  });
-  return await res.json();
+    body: JSON.stringify({ action: "login", email, password })
+  })
+    .then(res => res.json());
 }
 
-async function addAlumni(data) {
-  const res = await fetch(API_URL, {
+// Example: Add Alumni
+function addAlumni(formData) {
+  return fetch(API_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ action: "addAlumni", ...data })
-  });
-  return await res.json();
+    body: JSON.stringify({ action: "addAlumni", ...formData })
+  })
+    .then(res => res.json());
+}
+
+// Example: List Alumni
+function listAlumni() {
+  return fetch(API_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ action: "listAlumni" })
+  })
+    .then(res => res.json());
 }
