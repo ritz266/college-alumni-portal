@@ -1,4 +1,4 @@
-const backendUrl = "https://script.google.com/macros/s/AKfycbyhSWI5LLMLh7RSGtjh2OiI7YEPdHcEJWQa75-yW4Xm4SqnDL2U2vxeXUEt1y4BA59sFA/exec";
+const backendUrl = "https://script.google.com/macros/s/AKfycbzHb8bgrLxZS6VFiLZsIL996_MbaZNDafhQjSOXOBdJc7PWsjbYh1gag2j4-lTLqxgA/exec";
 // Replace with your deployed Google Cloud Function endpoint
 
 // LOGIN
