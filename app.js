@@ -1,4 +1,4 @@
-const backendUrl = "https://REGION-PROJECT.cloudfunctions.net/sheets"; 
+const backendUrl = "https://script.google.com/macros/s/AKfycbzbbxJiDL-9hYOI5UDjXOnT92yFEwJ1TPxDqfQDyIbJSW8op9wYS1qVJYrwkCH_aOEU/exec";
 // Replace with your deployed Google Cloud Function endpoint
 
 // LOGIN
