@@ -5,8 +5,18 @@ async function registerUser(data) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ action: "register", ...data })
   });
-  return await res.json();
+
+  const responseText = await res.text(); // Debug
+  console.log("Raw response:", responseText);
+
+  try {
+    return JSON.parse(responseText);
+  } catch (e) {
+    console.error("Failed to parse JSON:", e);
+    return { status: "error", message: "Invalid JSON from server" };
+  }
 }
+
 
 async function loginUser(data) {
   const res = await fetch(API_URL, {
